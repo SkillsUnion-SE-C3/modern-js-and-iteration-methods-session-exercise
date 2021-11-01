@@ -20,25 +20,25 @@
 
 const numbers = [1, 2, 3, 4];
 let total = 0;
-for (let i = 0; i < numbers.length; i++) {
-  total += numbers[i];
-}
+
+numbers.forEach((number) => {
+return  total += number;
+});
+
 console.log("total", total); // 10
 
 // Challenge 2: Refactor the following code using .filter()
 
 const alphabets = ["a", "b", "a", "b", "b"];
-const alphaB = [];
-alphabets.forEach((alpha) => {
-  if (alpha === "b") alphaB.push(alpha);
-});
+
+const alphaB = alphabets.filter((alpha) => alpha === "b");
 console.log("alphaB", alphaB); // [ 'b', 'b', 'b' ]
 
 // Challenge 3: Refactor the following code using .map()
 const genderShortForm = ["m", "f", "m", "f"];
 let genderSpelledForm = [];
 
-genderShortForm.forEach((x) => {
+genderShortForm.map((x) => {
   if (x === "m") genderSpelledForm.push("Male");
   if (x === "f") genderSpelledForm.push("Female");
 });
@@ -51,6 +51,6 @@ const currentSweetsInJug = 4;
 const putNewSweetsInJug = [1, 2, 3];
 
 const totalSweetsInJug = putNewSweetsInJug.reduce(
-  (accumulator, currentValue) => accumulator + currentValue
+  (accumulator, currentSweetsInJug) => accumulator + currentSweetsInJug
 );
 console.log("totalSweetsInJug", totalSweetsInJug); // 6
